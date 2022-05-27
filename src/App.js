@@ -1,9 +1,16 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 import './App.css'
 
 export default function App() {
   return (
-    <div>App</div>
+    <div className='app'>
+        <Navbar/>
+        <main>
+
+        </main>
+        <footer></footer>
+    </div>
   )
 }

@@ -14,16 +14,26 @@
     padding: 0;
 }
 
-html * {
+html, body, #root, .app {
+  height: 100%
+}
+
+html {
     font-family: "Honoka1", "Honoka2", -apple-system, BlinkMacSystemFont,
       "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
       "Droid Sans", "Helvetica Neue", sans-serif;
     text-rendering: optimizeLegibility;
     font-synthesis: none; /*For mac*/
+    
   }
 
 body {
-    background-color: aliceblue;
+    background-color: #fff7f4;
     color: black;
     
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: rgb(250, 250, 154);
 }
