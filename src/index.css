@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Honoka1;
+    font-display: swap;
+    src: url("./assets/Honoka.woff2");
+}
+  @font-face {
+    font-family: Honoka2;
+    font-display: swap;
+    src: url("./assets/Honoka.woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html * {
+    font-family: "Honoka1", "Honoka2", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none; /*For mac*/
+  }
+
+body {
+    background-color: aliceblue;
+    color: black;
+    
+}
