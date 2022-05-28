@@ -4,30 +4,37 @@ import CryptoCard from './CryptoCard'
 import { useGetCryptosQuery } from '../../services/cryptoApi'
 import './Cryptocurrencies.css'
 
-function Cryptocurrencies() {
+const Cryptocurrencies= ({simplified}) => {
+  const count = simplified ? 10 : 100
+  const { data: cryptoList , isFetching } = useGetCryptosQuery(count);
+  const [cryptos, setCryptos] = useState([])
   const [search, setSearch] = useState('')
-  const { data , isFetching } = useGetCryptosQuery(100);
-  const cryptos = data?.data?.coins
+  console.log(cryptos)
 
-  // useEffect(() => {
-  //   const toFilter = data?.data?.coins
-  //   cryptos = toFilter.filter((el)=>el.name.includes(search.toLowerCase()))
+  useEffect(() => {
+
+    const filtered = cryptoList?.data?.coins?.filter((el)=>el.name?.toLowerCase().includes(search.toLowerCase()))
+    setCryptos(filtered)
   
+  }, [search, cryptoList])
 
-  // }, [search])
   if (isFetching) return 'LOADING...'
   
 
   return (
     <Fragment>
-        <div className='cryptos-header'>
-            <h1>Cryptos</h1>
-        </div>
-        <form onSubmit={e => { e.preventDefault(); }}>
-          <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search crypto..'/>
-        </form>
+      {!simplified && (
+        <Fragment>
+          <div className='cryptos-header'>
+              <h1>Cryptocurrencies</h1>
+          </div>
+          <form className='cryptos-form' onSubmit={e => { e.preventDefault(); }}>
+            <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search cryptocurrency'/>
+          </form> 
+        </Fragment>)
+        }
         <div className='cryptos-grid'>
-            {cryptos.map((crypto)=>(
+            {cryptos?.map((crypto)=>(
               <CryptoCard key={crypto.uuid} crypto={crypto}/>
             ))}
         </div>
