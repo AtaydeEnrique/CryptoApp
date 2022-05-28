@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className='nav-container'>
         <div className='logo-container'>
           <img className='logo-icon'src={LogoIcon} alt='Page logo'></img>
-          <h2>Crypto App</h2>
+          <p>Crypto App</p>
         </div>
         <div className='links-container' >
           <Link to='/'>

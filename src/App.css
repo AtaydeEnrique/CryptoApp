@@ -19,7 +19,7 @@ main{
     top: -100%;
     width: 500%;
     z-index: -2;
-    opacity: 0;
+    opacity: 0.1;
     animation: noises 8s steps(10) infinite;
   }
   

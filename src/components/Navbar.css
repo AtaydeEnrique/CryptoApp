@@ -19,7 +19,8 @@
     margin-top: 25px;
     
 }
-.logo-container h2{
+.logo-container p{
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
