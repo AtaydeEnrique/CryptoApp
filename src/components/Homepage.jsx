@@ -11,7 +11,7 @@ const Homepage = () => {
   if (isFetching) return 'Loading...'
 
   const stats = coinsStats?.data
-  console.log(stats)
+
   return (
     <div className='home-container'>
         <h1>Global Crypto Stats</h1>
