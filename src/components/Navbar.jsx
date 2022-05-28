@@ -13,25 +13,25 @@ const Navbar = () => {
   return (
     <nav className='nav-container'>
         <div className='logo-container'>
-          <img className='logo-icon'src={LogoIcon}></img>
-          <h3>Crypto App</h3>
+          <img className='logo-icon'src={LogoIcon} alt='Page logo'></img>
+          <h2>Crypto App</h2>
         </div>
         <div className='links-container' >
           <Link to='/'>
             <div className='link'>
-              <img className='link-icon'src={HomeIcon}></img>
+              <img className='link-icon'src={HomeIcon} alt='Home'></img>
               <p>Homepage</p>
             </div>
           </Link>
           <Link to='/cryptocurrencies'>
             <div className='link'>
-              <img className='link-icon' src={CryptoIcon}></img>
+              <img className='link-icon' src={CryptoIcon} alt='Cryptocurrencies'></img>
               <p>Cryptocurrencies</p>
             </div>
           </Link>
           <Link to='/news'>
             <div className='link'>
-              <img className='link-icon' src={NewsIcon}></img>
+              <img className='link-icon' src={NewsIcon} alt='News'></img>
               <p>News</p>
             </div>
           </Link>
