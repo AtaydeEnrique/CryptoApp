@@ -44,19 +44,27 @@
     align-items: center;
     justify-content: left;
     padding: 20px;
-    transition: background-color 0.5s;
+    transition: all 0.5s;
+    
+    -webkit-font-smoothing: antialiased;
 }
 .link:hover{
     background-color: #fdf3f394;
-
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: translate3d(0, 0, 0) scale(1.05); 
+    zoom: 1;
+    -webkit-filter: blur(0);
 }
 
 .link p{
     font-size: 1rem;
     color: black;
+
 }
 
 .link-icon {
     width: 30px;
     margin-right: 10px;
+
+
 }

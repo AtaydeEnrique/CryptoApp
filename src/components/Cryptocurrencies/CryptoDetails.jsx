@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import millify from 'millify'
+import HTMLReactParser from 'html-react-parser'
 
 import Loading from '../UX/Loading'
 import DollarIcon from '../../assets/icons/dollar.svg'
@@ -20,24 +21,23 @@ const CryptoDetails = () => {
 
     if (isFetching) return <Loading/>
     const coin = data?.data?.coin
-    console.log(coin)
-    const changeType = coin?.change == '-' ? 'negative' : 'positive'
-
+    const changeType = coin?.change === '-' ? 'negative' : 'positive'
+    
   return (
     <Fragment>
       <div className='coin-header'>
         <div className='coin-header-name'>
-          <h1>{coin.name} ({coin.symbol}) </h1>
-          <img src={coin.iconUrl} alt='crypto icon'/>
+          <h1>{coin?.name} ({coin?.symbol}) </h1>
+          <img src={coin?.iconUrl} alt='crypto icon'/>
         </div>
-        <p>{coin.name} live price in US dollars, View value statistics, amrket cap and more.</p>
+        <p>{coin?.name} live price in US dollars, View value statistics, amrket cap and more.</p>
       </div>
       
       <div className='coin-tables'>
         <div className='coin-statistics-table'>
           <div className='coin-stat-header'>
-            <h2 >{coin.name} Value Statistics</h2>
-            <p>An overview showing the stats of {coin.name}.</p>
+            <h2 >{coin?.name} Value Statistics</h2>
+            <p>An overview showing the stats of {coin?.name}.</p>
           </div>
           <div className='coin-stat-container'>
             <div className='coin-stat'>
@@ -45,14 +45,14 @@ const CryptoDetails = () => {
                 <img src={DollarIcon} alt='USD'></img>
                 <h3 className='stat-name'>Price to USD</h3>
               </div>
-              <p>{millify(coin.price)}</p>
+              <p>{millify(coin?.price)}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
                 <img src={RankIcon} alt='CryptoRank'></img>
                 <h3 className='stat-name'>Rank</h3>
               </div>
-              <p>{coin.rank}</p>
+              <p>{coin?.rank}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
@@ -66,7 +66,7 @@ const CryptoDetails = () => {
                 <img src={DollarIcon} alt='Mrkt Cap'></img>
                 <h3 className='stat-name'>Market Cap</h3>
               </div>
-              <p>{millify(coin.marketCap)}</p>
+              <p>{millify(coin?.marketCap)}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
@@ -81,7 +81,7 @@ const CryptoDetails = () => {
         <div className='coin-statistics-table'>
           <div className='coin-stat-header'> 
             <h2>Other Statistics</h2>
-            <p>Stats of all cryptocurrencies for reference</p>
+            <p>Currency relevant statistics</p>
 
           </div>
           <div className='coin-stat-container'>
@@ -90,28 +90,28 @@ const CryptoDetails = () => {
                 <img src={GraphIcon} alt='Graph'></img>
                 <h3 className='stat-name'>No. Of Markets</h3>
               </div>
-              <p>{coin.numberOfMarkets}</p>
+              <p>{coin?.numberOfMarkets}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
                 <img src={ExchangeIcon} alt='Exchange'></img>
                 <h3 className='stat-name'>No. Of Exchanges</h3>
               </div>
-              <p>{coin.numberOfExchanges}</p>
+              <p>{coin?.numberOfExchanges}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
                 <img src={ExchangeIcon} alt='Exchange'></img>
                 <h3 className='stat-name'>Change</h3>
               </div>
-              <p className={`change-${changeType}`}>{coin.change}%</p>
+              <p className={`change-${changeType}`}>{coin?.change}%</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
                 <img src={ExclamationIcon} alt='Exclamation'></img>
                 <h3 className='stat-name'>Total Supply</h3>
               </div>
-              <p>{millify(coin?.supply?.total)}</p>
+              <p>{millify(coin?.supply?.total ? coin?.supply?.total : 0 )}</p>
             </div>
             <div className='coin-stat'>
               <div className='coin-stat-desc'>
@@ -122,6 +122,18 @@ const CryptoDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='coin-description'>
+        <h2>What is {coin?.name}?</h2>
+        {HTMLReactParser(coin?.description)}
+      </div>
+      <div className='coin-links'>
+        {coin?.links.map((crypto,i)=>(
+          <div className='coin-link' key={i}>
+            <h4>{crypto.type[0].toUpperCase()}{crypto.type.substring(1)}</h4>
+            <a href={crypto.url}>{crypto.name}</a>
+          </div>
+        ))}
       </div>
     </Fragment>
   )

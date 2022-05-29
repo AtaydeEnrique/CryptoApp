@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import LogoIcon from '../assets/icons/logo.png'
-import HomeIcon from '../assets/icons/home.png' 
-import CryptoIcon from '../assets/icons/crypto.png' 
-import NewsIcon from '../assets/icons/news.png' 
+import LogoIcon from '../assets/icons/logo.svg'
+import HomeIcon from '../assets/icons/home.svg' 
+import CryptoIcon from '../assets/icons/crypto.svg' 
+import NewsIcon from '../assets/icons/news.svg' 
 
 import './Navbar.css'
 
