@@ -18,23 +18,23 @@ const Homepage = () => {
         <div className='global-stats-grid'>
           <div className='global-stats-contanier'>
             <h4>Total Cryptos</h4>
-            <p>{stats.totalCoins}</p>
+            <p>{stats?.totalCoins}</p>
           </div>
           <div className='global-stats-contanier'>
             <h4>Total Exchanges</h4>
-            <p>{stats.totalExchanges}</p>
+            <p>{stats?.totalExchanges}</p>
           </div>
           <div className='global-stats-contanier'>
             <h4>Total Market Cap</h4>
-            <p>{millify(stats.totalMarketCap)}</p>
+            <p>{millify(stats?.totalMarketCap)}</p>
           </div>
           <div className='global-stats-contanier'>
             <h4>Total 24h Volume</h4>
-            <p>{millify(stats.total24hVolume)}</p>
+            <p>{millify(stats?.total24hVolume)}</p>
           </div>
           <div className='global-stats-contanier'>
             <h4>Total Markets</h4>
-            <p>{stats.totalMarkets}</p>
+            <p>{stats?.totalMarkets}</p>
           </div>
         </div>
         <h5>Current Best Cryptos</h5>

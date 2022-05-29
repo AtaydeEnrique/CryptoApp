@@ -13,8 +13,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    
 }
-.news-form option{
+.news-form select{
     padding: 8px;
     border: solid thin transparent;
     border-radius: 7px;
