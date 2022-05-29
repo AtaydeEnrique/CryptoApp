@@ -3,6 +3,7 @@ import CryptoCard from './CryptoCard'
 
 import { useGetCryptosQuery } from '../../services/cryptoApi'
 import './Cryptocurrencies.css'
+import Loading from '../UX/Loading'
 
 const Cryptocurrencies= ({simplified}) => {
   const count = simplified ? 10 : 100
@@ -17,9 +18,8 @@ const Cryptocurrencies= ({simplified}) => {
   
   }, [search, cryptoList])
 
-  if (isFetching) return 'LOADING...'
+  if (isFetching) return <Loading/>
   
-
   return (
     <Fragment>
       {!simplified && (

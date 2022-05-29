@@ -1,14 +1,19 @@
 import React from 'react'
-import CryptoCurrencies from './Cryptocurrencies/Cryptocurrencies'
 import millify from 'millify'
+
+import CryptoCard from './Cryptocurrencies/CryptoCard'
+import Loading from './UX/Loading'
+import CryptoCurrencies from './Cryptocurrencies/Cryptocurrencies'
 
 import { useGetCryptoStatsQuery } from '../services/cryptoApi'
 import './Homepage.css'
-import CryptoCard from './Cryptocurrencies/CryptoCard'
+import News from './News'
+
 
 const Homepage = () => {
   const { data:coinsStats, isFetching } = useGetCryptoStatsQuery()
-  if (isFetching) return 'Loading...'
+  
+  if (isFetching) return <Loading/>
 
   const stats = coinsStats?.data
 
@@ -39,19 +44,24 @@ const Homepage = () => {
         </div>
         <h5>Current Best Cryptos</h5>
         <div className='stats-grid'>
-        {stats?.bestCoins?.map((coin) => (
-          <CryptoCard crypto={coin} key={coin.uuid} stat={true}/>
+        {stats?.bestCoins?.map((coin,i) => (
+          <div className='stats-card' key={coin.uuid}>
+            <CryptoCard crypto={coin}  stat={true}/>
+          </div>
         ))}
         </div>
         <h5>Newest cryptos</h5>
         <div className='stats-grid'>
         {stats?.newestCoins?.map((coin) => (
-          <CryptoCard crypto={coin} key={coin.uuid} stat={true}/>
+          <div className='stats-card' key={coin.uuid}>
+            <CryptoCard crypto={coin} stat={true}/>
+          </div>
         ))}
         </div>
         <h2>Top 10 Cryptocurrencies in the world</h2>
         <CryptoCurrencies simplified={true}/>
         <h2>Latest Cryptonews</h2>
+        <News simplified={true}/>
     </div>
   )
 }

@@ -5,6 +5,8 @@ import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
 import Cryptocurrencies from './components/Cryptocurrencies/Cryptocurrencies'
 import News from './components/News'
+import CryptoDetails from './components/Cryptocurrencies/CryptoDetails'
+
 import './App.css'
 
 export default function App() {
@@ -16,6 +18,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+            <Route path="/cryptocurrencies/:id" element={<CryptoDetails />} />
             <Route path="/news" element={<News />} />
         </Routes>
         </main>

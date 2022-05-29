@@ -2,6 +2,7 @@ import React from 'react'
 import millify from 'millify'
 
 import './CryptoCard.css'
+import { Link } from 'react-router-dom'
 
 const CryptoCard = ({crypto, stat}) => {
   let percent = false
@@ -22,6 +23,11 @@ const CryptoCard = ({crypto, stat}) => {
             <p>Daily Change: <span className={`card-percent ${!percent ? 'positive' : 'negative'}`}>{millify(crypto.change)}%</span></p>
         </div>)
         }
+        <div className='card-link'>
+          <Link to={`/cryptocurrencies/${crypto.uuid}`}>
+            More details
+          </Link>
+        </div>
 
     </div>
   )

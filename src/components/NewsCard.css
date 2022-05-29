@@ -43,6 +43,7 @@
 
 .news-card-footer a{
     text-decoration: none;
+    font-size: 0.9rem;
     padding: 3px;
     border: solid white;
     background-color: white;
