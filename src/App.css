@@ -5,6 +5,7 @@
 .app-collapsed{
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .main-full{
