@@ -25,115 +25,117 @@ const CryptoDetails = () => {
     
   return (
     <Fragment>
-      <div className='coin-header'>
-        <div className='coin-header-name'>
-          <h1>{coin?.name} ({coin?.symbol}) </h1>
-          <img src={coin?.iconUrl} alt='crypto icon'/>
-        </div>
-        <p>{coin?.name} live price in US dollars, View value statistics, amrket cap and more.</p>
-      </div>
-      
-      <div className='coin-tables'>
-        <div className='coin-statistics-table'>
-          <div className='coin-stat-header'>
-            <h2 >{coin?.name} Value Statistics</h2>
-            <p>An overview showing the stats of {coin?.name}.</p>
+      <div className='single-coin-conainer'>
+        <div className='coin-header'>
+          <div className='coin-header-name'>
+            <h1>{coin?.name} ({coin?.symbol}) </h1>
+            <img src={coin?.iconUrl} alt='crypto icon'/>
           </div>
-          <div className='coin-stat-container'>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={DollarIcon} alt='USD'></img>
-                <h3 className='stat-name'>Price to USD</h3>
-              </div>
-              <p>{millify(coin?.price)}</p>
+          <p>{coin?.name} live price in US dollars, View value statistics, amrket cap and more.</p>
+        </div>
+        
+        <div className='coin-tables'>
+          <div className='coin-statistics-table'>
+            <div className='coin-stat-header'>
+              <h2 >{coin?.name} Value Statistics</h2>
+              <p>An overview showing the stats of {coin?.name}.</p>
             </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={RankIcon} alt='CryptoRank'></img>
-                <h3 className='stat-name'>Rank</h3>
+            <div className='coin-stat-container'>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={DollarIcon} alt='USD'></img>
+                  <h3 className='stat-name'>Price to USD</h3>
+                </div>
+                <p>{millify(coin?.price)}</p>
               </div>
-              <p>{coin?.rank}</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={VolumeIcon} alt='Volume'></img>
-                <h3 className='stat-name'>24h Volume</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={RankIcon} alt='CryptoRank'></img>
+                  <h3 className='stat-name'>Rank</h3>
+                </div>
+                <p>{coin?.rank}</p>
               </div>
-              <p>{millify(coin['24hVolume'])}</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={DollarIcon} alt='Mrkt Cap'></img>
-                <h3 className='stat-name'>Market Cap</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={VolumeIcon} alt='Volume'></img>
+                  <h3 className='stat-name'>24h Volume</h3>
+                </div>
+                <p>{millify(coin['24hVolume'])}</p>
               </div>
-              <p>{millify(coin?.marketCap)}</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={TrophyIcon} alt='Highest'></img>
-                <h3 className='stat-name'>All-time-high(daily avg.)</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={DollarIcon} alt='Mrkt Cap'></img>
+                  <h3 className='stat-name'>Market Cap</h3>
+                </div>
+                <p>{millify(coin?.marketCap)}</p>
               </div>
-              <p>{millify(coin?.allTimeHigh?.price)}</p>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={TrophyIcon} alt='Highest'></img>
+                  <h3 className='stat-name'>All-time-high(daily avg.)</h3>
+                </div>
+                <p>{millify(coin?.allTimeHigh?.price)}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className='coin-statistics-table'>
-          <div className='coin-stat-header'> 
-            <h2>Other Statistics</h2>
-            <p>Currency relevant statistics</p>
+          <div className='coin-statistics-table'>
+            <div className='coin-stat-header'> 
+              <h2>Other Statistics</h2>
+              <p>Currency relevant statistics</p>
 
-          </div>
-          <div className='coin-stat-container'>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={GraphIcon} alt='Graph'></img>
-                <h3 className='stat-name'>No. Of Markets</h3>
-              </div>
-              <p>{coin?.numberOfMarkets}</p>
             </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={ExchangeIcon} alt='Exchange'></img>
-                <h3 className='stat-name'>No. Of Exchanges</h3>
+            <div className='coin-stat-container'>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={GraphIcon} alt='Graph'></img>
+                  <h3 className='stat-name'>No. Of Markets</h3>
+                </div>
+                <p>{coin?.numberOfMarkets}</p>
               </div>
-              <p>{coin?.numberOfExchanges}</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={ExchangeIcon} alt='Exchange'></img>
-                <h3 className='stat-name'>Change</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={ExchangeIcon} alt='Exchange'></img>
+                  <h3 className='stat-name'>No. Of Exchanges</h3>
+                </div>
+                <p>{coin?.numberOfExchanges}</p>
               </div>
-              <p className={`change-${changeType}`}>{coin?.change}%</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={ExclamationIcon} alt='Exclamation'></img>
-                <h3 className='stat-name'>Total Supply</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={ExchangeIcon} alt='Exchange'></img>
+                  <h3 className='stat-name'>Change</h3>
+                </div>
+                <p className={`change-${changeType}`}>{coin?.change}%</p>
               </div>
-              <p>{millify(coin?.supply?.total ? coin?.supply?.total : 0 )}</p>
-            </div>
-            <div className='coin-stat'>
-              <div className='coin-stat-desc'>
-                <img src={ExclamationIcon} alt='Exclamation'></img>
-                <h3 className='stat-name'>Circulating Supply</h3>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={ExclamationIcon} alt='Exclamation'></img>
+                  <h3 className='stat-name'>Total Supply</h3>
+                </div>
+                <p>{millify(coin?.supply?.total ? coin?.supply?.total : 0 )}</p>
               </div>
-              <p>{millify(coin?.supply?.circulating)}</p>
+              <div className='coin-stat'>
+                <div className='coin-stat-desc'>
+                  <img src={ExclamationIcon} alt='Exclamation'></img>
+                  <h3 className='stat-name'>Circulating Supply</h3>
+                </div>
+                <p>{millify(coin?.supply?.circulating)}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className='coin-description'>
-        <h2>What is {coin?.name}?</h2>
-        {HTMLReactParser(coin?.description)}
-      </div>
-      <div className='coin-links'>
-        {coin?.links.map((crypto,i)=>(
-          <div className='coin-link' key={i}>
-            <h4>{crypto.type[0].toUpperCase()}{crypto.type.substring(1)}</h4>
-            <a href={crypto.url}>{crypto.name}</a>
-          </div>
-        ))}
+        <div className='coin-description'>
+          <h2>What is {coin?.name}?</h2>
+          {HTMLReactParser(coin?.description)}
+        </div>
+        <div className='coin-links'>
+          {coin?.links.map((crypto,i)=>(
+            <div className='coin-link' key={i}>
+              <h4>{crypto.type[0].toUpperCase()}{crypto.type.substring(1)}</h4>
+              <a href={crypto.url}>{crypto.name}</a>
+            </div>
+          ))}
+        </div>
       </div>
     </Fragment>
   )

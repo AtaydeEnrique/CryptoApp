@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import LogoIcon from '../assets/icons/logo.svg'
@@ -9,9 +9,15 @@ import NewsIcon from '../assets/icons/news.svg'
 import './Navbar.css'
 
 const Navbar = () => {
-
+  const [collapsed, setCollapsed] = useState(window.innerWidth <= 850)
+  window.addEventListener('resize', function(event){
+    setCollapsed(window.innerWidth <= 850)
+  });
   return (
-    <nav className='nav-container'>
+    <Fragment>
+    {!collapsed ? 
+      (
+        <nav className='nav-container'>
         <div className='logo-container'>
           <img className='logo-icon'src={LogoIcon} alt='Page logo'></img>
           <p>Crypto App</p>
@@ -36,7 +42,14 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-    </nav>
+      </nav>
+      ) : 
+      (
+        <nav className='nav-container-collapsed'>
+          HOLA
+        </nav>
+      )}
+    </Fragment>
   )
 }
 

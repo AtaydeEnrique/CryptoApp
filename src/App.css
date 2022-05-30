@@ -1,13 +1,22 @@
-.app{
+.app-full{
     display: flex;
 }
 
-main{
+.app-collapsed{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-full{
     display: flex;
     flex-direction: column;
     margin-left: 20%;
     width: 80%;
     height: fit-content;
+}
+
+.main-collapsed{
+  width: 100%;
 }
 
 

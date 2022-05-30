@@ -58,3 +58,9 @@
     background-position: 0% 50%;
   }
 }
+
+@media (max-width:850px){
+  .loader {
+    left: 50%;
+  }
+}
