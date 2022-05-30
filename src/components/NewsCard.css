@@ -59,6 +59,23 @@
     color: white;
 }
 
+@media (max-width:350px){
+    .news-card-header{
+        font-size: 4vw;
+    }
+    .news-card-details{
+        font-size: 3.5vw;
+    }
+    .news-card-footer{
+        font-size: 3.5vw;
+    }
+    .news-card-footer a{
+        font-size: 3.5vw;
+    }
+    .news-card-header > img{
+        width: 30vw;
+    }
+}
 
 @media (max-width:768px){
     .news-card-header{

@@ -29,11 +29,15 @@
     margin: 20px;
 }
 
+
 @media (max-width:480px){
     .news-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+    .news-header{
+        font-size: 4.5vw;
   }
+}
 
 @media (min-width: 481px) and (max-width:768px){
     .news-grid {
