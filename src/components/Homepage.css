@@ -3,13 +3,14 @@
     align-items: center;
     justify-content: center;
     padding: 20px 0;
-    font-size: 3rem;
+    font-size: 3.5vw;
+    width: 100%;
     background-color: #fff7f4c4;
     border: solid thin transparent;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
 }
 .home-container h2{
-    font-size: 1.5rem !important;
+    font-size: 2vw !important;
 }
 
 .home-container h5 {
@@ -17,7 +18,7 @@
     border: solid thin transparent;
     padding: 10px;
     background-color: #fff7f4c4;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
     border: solid thin transparent;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
 
@@ -47,15 +48,18 @@
 }
 
 .global-stats-contanier h4{
-    font-size:2rem;
+    font-size:2.3vw;
     color: rgb(65, 65, 65);
     font-weight: bolder;
 }
 
 .global-stats-contanier p{
-    font-size: 1.2;
+    font-size: 1.2vw;
     color: rgb(88, 88, 88);
     font-weight: bolder;
+    border:solid thin rgb(177, 177, 177);
+    padding: 3px 5px;
+    border-radius: 5px;
 }
 
 .stats-grid {
@@ -70,3 +74,69 @@
     width: 40%;
     min-width: 50%;
 }
+
+
+@media (max-width:480px){
+    .global-stats-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .home-container h1{
+        font-size: 6.3vw;
+    }
+    .home-container h2{
+        font-size: 4.7vw !important;
+    }
+    .home-container h5 {
+        font-size: 4vw;
+    }
+    .global-stats-contanier h4{
+        font-size:5vw;
+    }
+    .global-stats-contanier p{
+        font-size: 3vw;
+    }
+  }
+
+@media (min-width: 481px) and (max-width:768px){
+    .global-stats-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .home-container h1{
+        font-size: 5vw;
+    }
+    .home-container h2{
+        font-size: 3vw !important;
+    }
+    .home-container h5 {
+        font-size: 2.5vw;
+    }
+    .global-stats-contanier h4{
+        font-size:3vw;
+    }
+    .global-stats-contanier p{
+        font-size: 1.8vw;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width:1024px){
+    .global-stats-grid{
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    .home-container h1{
+        font-size: 4.5vw;
+    }
+    .home-container h2{
+        font-size: 3vw !important;
+    }
+    .home-container h5 {
+        font-size: 2vw;
+    }
+    .global-stats-contanier h4{
+        font-size:2.7vw;
+    }
+    
+    .global-stats-contanier p{
+        font-size: 1.5vw;
+    }
+  }

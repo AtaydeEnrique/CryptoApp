@@ -58,3 +58,29 @@
     background-color: black;
     color: white;
 }
+
+
+@media (max-width:768px){
+    .news-card-header{
+        flex-direction: column;
+    }
+    .news-card-header h3{
+        max-width: 100%;
+
+    }
+    .news-card-header img{
+        max-width: 100%;
+        width: 100px;
+        border-radius: 10px;
+        border-radius: 100%;
+        margin-top: 10px;
+
+    }
+    .news-card-footer{
+        flex-direction: column;
+        padding-bottom: 8px;
+    }
+    .news-card-footer a{
+        margin-top: 12px;
+    }
+  }

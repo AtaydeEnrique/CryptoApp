@@ -28,3 +28,27 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 20px;
 }
+
+@media (max-width:480px){
+    .news-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+@media (min-width: 481px) and (max-width:768px){
+    .news-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width:1024px){
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width:1200px){
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }

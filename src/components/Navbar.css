@@ -13,19 +13,22 @@
 
 .logo-container {
     display: flex;
-    width: 100%;
+    width: 80%;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 25px;
-    
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 .logo-container p{
-    font-size: 1.5rem;
+    font-size: 1.7vw;
     font-weight: bold;
 }
 
 .logo-icon{
-    width: 70px;
+    width: 6vw;
 }
 
 .links-container {
@@ -45,7 +48,9 @@
     justify-content: left;
     padding: 20px;
     transition: all 0.5s;
-    
+    margin: 4px 0;
+    box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.25);
+
     -webkit-font-smoothing: antialiased;
 }
 .link:hover{
@@ -57,13 +62,13 @@
 }
 
 .link p{
-    font-size: 1rem;
+    font-size: 1.3vw;
     color: black;
 
 }
 
 .link-icon {
-    width: 30px;
+    width: 1.5vw;
     margin-right: 10px;
 
 
