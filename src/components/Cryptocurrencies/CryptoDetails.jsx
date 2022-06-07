@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import millify from 'millify'
 import HTMLReactParser from 'html-react-parser'
@@ -12,17 +12,22 @@ import GraphIcon from '../../assets/icons/graph.svg'
 import ExchangeIcon from '../../assets/icons/exchange.svg'
 import ExclamationIcon from '../../assets/icons/exclamation.svg'
 
-import { useGetOneCryptoQuery } from '../../services/cryptoApi'
+import { useGetOneCryptoQuery, useGetCryptoHistoryQuery } from '../../services/cryptoApi'
 import './CryptoDetails.css'
+import CryptoChart from '../CryptoChart'
 
 const CryptoDetails = () => {
     const {id} = useParams()
+    const [timePeriod, setTimeperiod] = useState('7d');
     const {data,  isFetching} = useGetOneCryptoQuery(id)
+    const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId:id, timePeriod });
 
     if (isFetching) return <Loading/>
     const coin = data?.data?.coin
     const changeType = coin?.change === '-' ? 'negative' : 'positive'
-    
+
+    const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+
   return (
     <Fragment>
       <div className='single-coin-conainer'>
@@ -33,7 +38,14 @@ const CryptoDetails = () => {
           </div>
           <p>{coin?.name} live price in US dollars, View value statistics, amrket cap and more.</p>
         </div>
-        
+        <div className='crypto-chart'>
+            <select onChange={(e) => setTimeperiod(e.target.value)} value={timePeriod}>
+              {time.map((t,i)=>(
+                <option value={t} key={i} >{t}</option>
+              ))}
+            </select>
+            <CryptoChart coinHistory={coinHistory} coinName={coin?.name} currentPrice={millify(coin?.price)}/>
+        </div>
         <div className='coin-tables'>
           <div className='coin-statistics-table'>
             <div className='coin-stat-header'>
