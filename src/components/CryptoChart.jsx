@@ -41,15 +41,7 @@ import { Fragment } from "react";
     };
   
     const options = {
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-            },
-          },
-        ],
-      },
+      responsive: true
     };
     ChartJS.register(
       CategoryScale,
@@ -60,7 +52,6 @@ import { Fragment } from "react";
       Tooltip,
       Legend
     );
-    console.log(data, options, 'HOLA')
     return (
       <Fragment>
             <div className="price-container">  
