@@ -21,6 +21,41 @@
     font-size: 3rem;
 }
 
+.coin-chart-title{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-time-period{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-time-period h5{
+    margin-right: 20px;
+}
+
+.coin-time-period select{
+    padding: 1px;
+    border: solid thin transparent;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+.price-container{
+    padding: 10px;
+    margin: 30px;
+    background-color: #fff7f498;
+    border: solid thin transparent;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
 .coin-tables{
     display: flex;
     align-items: center;
@@ -196,6 +231,15 @@
     .coin-statistics-table:nth-child(2){
         margin-top: 20px;
     
+    }
+    .coin-header-name h1{
+        font-size: 6vw;
+    }
+    .coin-header-name img{
+        width: 6vw;
+    }
+    .coin-header p{
+        font-size: 2vw
     }
   }
 

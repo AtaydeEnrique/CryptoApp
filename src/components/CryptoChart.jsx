@@ -63,19 +63,14 @@ import { Fragment } from "react";
     console.log(data, options, 'HOLA')
     return (
       <Fragment>
-            <h1>
-                {coinName} Price Chart{" "}
-            </h1>
-            <div className="chart-header">
-                <div className="price-container">  
+            <div className="price-container">  
                 <h5 className="price-change">
                     Change: {coinHistory?.data?.change}%
                 </h5>
-                <h5 level={5} className="current-price">
+                <h5 className="current-price">
                     Current {coinName} Price: $ {currentPrice}
                 </h5>
                 <Line data={data} options={options}/>
-                </div>
             </div>
         </Fragment>
     );

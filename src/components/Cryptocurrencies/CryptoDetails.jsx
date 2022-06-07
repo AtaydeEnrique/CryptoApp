@@ -38,14 +38,20 @@ const CryptoDetails = () => {
           </div>
           <p>{coin?.name} live price in US dollars, View value statistics, amrket cap and more.</p>
         </div>
-        <div className='crypto-chart'>
-            <select onChange={(e) => setTimeperiod(e.target.value)} value={timePeriod}>
-              {time.map((t,i)=>(
-                <option value={t} key={i} >{t}</option>
-              ))}
-            </select>
-            <CryptoChart coinHistory={coinHistory} coinName={coin?.name} currentPrice={millify(coin?.price)}/>
+        <div className='coin-chart-title'>
+            <h1>
+                {coin?.name} Price Chart{" "}
+            </h1>
+            <div className='coin-time-period'>
+              <h5>Time Period</h5>
+              <select onChange={(e) => setTimeperiod(e.target.value)} value={timePeriod}>
+                {time.map((t,i)=>(
+                  <option value={t} key={i} >{t}</option>
+                ))}
+              </select>
+            </div>
         </div>
+        <CryptoChart coinHistory={coinHistory} coinName={coin?.name} currentPrice={millify(coin?.price)}/>
         <div className='coin-tables'>
           <div className='coin-statistics-table'>
             <div className='coin-stat-header'>
